@@ -18,3 +18,5 @@ docker compose up --build
 ```bash
 curl -X GET "http://localhost:{PORT}/v1/bills/calculate?numbers=966500000000,966500000001&national_id=1234567890"
 ```
+
+
