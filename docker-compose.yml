@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8089:8000"
+    volumes:
+      - ./src:/app/src
+    env_file:
+      - .env
+    environment:
+      - ENVIRONMENT=development
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3 
